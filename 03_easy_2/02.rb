@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# 02 - How Big is the Room?
 SQM_TO_SQF = 3.28084**2
 puts 'Enter the length of the room in meters.'
 length = gets.to_f

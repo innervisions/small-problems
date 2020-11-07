@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# 05 - Greeting a User
 print 'What is your name?: '
 name = gets.chomp
 

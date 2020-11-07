@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# 04 - When Will I Retire?
 print 'What is your age?: '
 age = gets.to_i
 print 'What age would you like to retire?: '

@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# 03 - Tip Caculator
 print 'What is the bill?: '
 bill = gets.to_f
 print 'What is the tip percentage?: '

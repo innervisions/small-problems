@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# 01 - How Old is Teddy?
 puts "What's your name?"
 name = gets.chomp
 name = 'Teddy' if name.empty?
