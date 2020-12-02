@@ -1,28 +1,21 @@
-# 08 - Bubble Sort
-def bubble_sort!(arr)
-  offset = 0
-  loop do
-    swapped = false
-    (arr.size - 1 - offset).times do |i|
-      if arr[i] > arr[i + 1]
-        arr[i], arr[i + 1] = arr[i + 1], arr[i]
-        swapped = true
-      end
-    end
-    break unless swapped
-    offset += 1
+# 08 - Next Featured Number Higher than a Given Value
+def next_featured(num)
+  num += 1
+  num += 1 until num.odd? && num % 7 == 0
+  until num > 9_876_543_210
+    return num if num.digits == num.digits.uniq
+    num += 14
   end
-  arr
+  'There are no featurned numbers above the given input.'
 end
 
-p array = [5, 3]
-p bubble_sort!(array)
-p array == [3, 5]
-puts
-p array = [6, 2, 7, 1, 4]
-p bubble_sort!(array)
-p array == [1, 2, 4, 6, 7]
-puts
-p array = %w(Sue Pete Alice Tyler Rachel Kim Bonnie)
-p bubble_sort!(array)
-p array == %w(Alice Bonnie Kim Pete Rachel Sue Tyler)
+p next_featured(12) == 21
+p next_featured(20) == 21
+p next_featured(21) == 35
+p next_featured(997) == 1029
+p next_featured(1029) == 1043
+p next_featured(999_999) == 1_023_547
+p next_featured(999_999_987) == 1_023_456_987
+
+p next_featured(9_999_999_999)
+# -> There is no possible number that fulfills those requirements

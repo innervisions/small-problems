@@ -1,16 +1,28 @@
-# 09 - Sum Square - Square Sum
-def sum_square_difference(num)
-  sum = 0
-  sum_of_squares = 0
-  1.upto(num) do |n|
-    sum += n
-    sum_of_squares += n**2
+# 09 - Bubble Sort
+def bubble_sort!(arr)
+  offset = 0
+  loop do
+    swapped = false
+    (arr.size - 1 - offset).times do |i|
+      if arr[i] > arr[i + 1]
+        arr[i], arr[i + 1] = arr[i + 1], arr[i]
+        swapped = true
+      end
+    end
+    break unless swapped
+    offset += 1
   end
-  sum**2 - sum_of_squares
+  arr
 end
 
-p sum_square_difference(3) == 22
-# -> (1 + 2 + 3)**2 - (1**2 + 2**2 + 3**2)
-p sum_square_difference(10) == 2640
-p sum_square_difference(1) == 0
-p sum_square_difference(100) == 25164150
+p array = [5, 3]
+p bubble_sort!(array)
+p array == [3, 5]
+puts
+p array = [6, 2, 7, 1, 4]
+p bubble_sort!(array)
+p array == [1, 2, 4, 6, 7]
+puts
+p array = %w(Sue Pete Alice Tyler Rachel Kim Bonnie)
+p bubble_sort!(array)
+p array == %w(Alice Bonnie Kim Pete Rachel Sue Tyler)
